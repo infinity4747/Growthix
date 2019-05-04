@@ -21,13 +21,18 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('Test/<user>/<root>/result/',views.result, name='res'),
-    path('Test/<user>/<root>',views.Test_view,name='test'),
-    path('registration1',views.Save,name="reg1"),
+    path('Test/<id>/result/',views.result, name='res'),
+    path('Test/<id>',views.Test_view,name='test'),
+    path('registration1',views.reg1,name="reg1"),
     path('',views.index,name='home'),
-    path('registration2/<user>',views.reg2,name='reg2'),
-    path('registration3/<user>',views.reg4,name='reg4'),
-    path('registration4/<user>',views.reg3,name='reg3'),
-    path('notAvailable/<user>',views.no,name="notAvailable")
+    path('registration2/<id>',views.reg2,name='reg2'),
+    #path('registration3/<id>',views.reg4,name='reg4'),
+    path('registration4/<id>',views.reg3,name='reg3'),
+    path('notAvailable/<id>',views.no,name="notAvailable"),
+    path('Cannot/<id>',views.cannot,name="Cannot"),
+    #path('check',views.otchet,name="ot"),
+    #path('export/csv/', views.export_users_csv, name='export_users_csv'),
+
+#     path('ForDiana',views.Diana,name='Diana'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

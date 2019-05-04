@@ -31,7 +31,7 @@ button::-moz-focus-inner {
 	margin-top: 50px;
 	margin-bottom: 100px;
 	border-radius: 5px;
-	box-shadow: 0 0 1px 0px #ecebeb;
+	box-shadow: 0 0 1px 0px #CC0606;
 }
 
 .reg_content {
@@ -49,29 +49,29 @@ button::-moz-focus-inner {
 .reg_title {
 	font-size: 26px;
 	font-weight: bold;
-	color: #4505b3;
+	color: #CC0606;
 }
 
 .test_par {
-	color: #4a4a4a;
+	color: #CC0606;
 	font-size: 16px;
 	width: 90%;
 }
 .reg_par {
-	color: #4a4a4a;
+	color: black;
 	font-size: 18px;
 	width: 80%;
 }
 
 .sections {
-	color: #4a4a4a;
+	color: #CC0606;
 	font-size: 16px;
 	width: 90%;
 	margin-top: -12px;
 }
 
 .next {
-	color: #4505b3;
+	color: #CC0606;
 	padding-left: 171px;
 }
 
@@ -111,13 +111,13 @@ button::-moz-focus-inner {
 }
 
 .form-control:focus {
-  border-color: #4505b3;
-  box-shadow: inset 0 1px 1px #4505b3, 0 0 10px #4505b3;
+  border-color: #CC0606;
+  box-shadow: inset 0 1px 1px #CC0606, 0 0 10px #CC0606;
 }
 /*Radio buttons */
 .radio_text {
 	font-size: 16px;
-	color: #4a4a4a;
+	color: #CC0606;
 	margin-left: 16px;
 	width: 80%;
 }
@@ -145,7 +145,7 @@ i:before {
     position: absolute;
     top: 3px; bottom: 3px;
     left: 3px; right: 3px;
-    background-color: #4505b3;
+    background-color: #CC0606;
     border-radius: 6px;
     transform: scale(0);
     transition: .4s;
@@ -196,24 +196,24 @@ input {
 .reg_title {
 	font-size: 24px;
 	font-weight: bold;
-	color: #4505b3;
+	color: #CC0606;
 }
 
 .test_par {
-	color: #4a4a4a;
+	color: #CC0606;
 	font-size: 14px;
 	width: 90%;
 }
 
 .sections {
-	color: #4a4a4a;
+	color: #CC0606;
 	font-size: 14px;
 	width: 90%;
 	margin-top: -12px;
 }
 
 .next {
-	color: #4505b3;
+	color: #CC0606;
 	padding-left: 124px;
 	font-size: 14px;
 }
@@ -274,17 +274,17 @@ input {
 .reg_title {
 	font-size: 20px;
 	font-weight: bold;
-	color: #4505b3;
+	color: #CC0606;
 }
 
 .test_par {
-	color: #4a4a4a;
+	color: #CC0606;
 	font-size: 10px;
 	width: 90%;
 }
 
 .sections {
-	color: #4a4a4a;
+	color: #CC0606;
 	font-size: 10px;
 	width: 90%;
 	margin-top: -12px;
@@ -292,14 +292,14 @@ input {
 
 
 .next {
-	color: #4505b3;
+	color: #CC0606;
 	padding-left: 62px;
 	font-size: 10px;
 }
 
 .next:hover {
 	text-decoration: none;
-	color: #34008d;
+	color: #CC0606;
 }
 
 .next img {
@@ -307,13 +307,13 @@ input {
 }
 
 .prev {
-	color: #9b9b9b;
+	color: #CC0606;
 	font-size: 10px;
 }
 
 .prev:hover {
 	text-decoration: none;
-	color: #898989;
+	color: #CC0606;
 }
 
 .prev img {

@@ -9,7 +9,7 @@
 	var inputDate = new Date("12/18/2018");
 	var inputDate2 = new Date("12/19/2018");
 	var todaysDate = new Date();
-	if(inputDate2.setHours(0,0,0,0) <todaysDate.setHours(0,0,0,0) ) {
+	if(inputDate2.setHours(0,0,0,0) >todaysDate.setHours(0,0,0,0) ) {
     	window.location = "{% url 'notAvailable' user %}";
 	}
 	</script>

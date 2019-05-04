@@ -5,13 +5,13 @@ var underLine;
 var par_title;
 var tab_list=[];
 window.onload = function(){
-	
+
 	tab_content = document.getElementsByClassName('sections');
 	tabs = document.getElementsByClassName('tab');
 	line_title = document.getElementsByClassName('test_title');
 	par_title = document.getElementsByClassName('test_par');
 	underLine = document.getElementsByClassName('under_line');
-	var fiveMinutes = 60 * 30,
+	var fiveMinutes = 60 * 120,
 		       display = document.querySelector('#time');
 	startTimer(fiveMinutes, display);
 	CloseTab();
@@ -22,31 +22,14 @@ window.onload = function(){
 }
 
 function CloseTab(){
+
 	for(var i = 0; i < tab_content.length; i++){
+
 		tab_content[i].style.display = 'none';
 		tabs[i].classList.remove('active');
 		underLine[i].style.display = "none";
 	}
 }
-
-// document.getElementById('tab-wrapper').onclick = function(target){
-// 	var target = event.target;
-// 	for(var i = 0; i < 6; i++){
-// 		if(target == tabs[i]){
-// 			if(!tab_list.includes(i)){
-// 				CloseTab();
-// 				alert("Do you want leave?")
-// 				tab_content[i].style.display = 'block';
-// 				target.classList.add('active');
-// 				line_title[0].innerHTML = tabs[i].innerHTML;
-// 				underLine[i].style.display = 'block'; 
-// 				tab_list.push(i);
-// 				console.log(tab_list+" kmkmkx")
-// 				break;
-// 			}
-// 		}
-// 	}
-// }
 function startTimer(duration, display) {
 	    var timer = duration, minutes, seconds;
 	    setInterval(function () {
@@ -57,16 +40,15 @@ function startTimer(duration, display) {
 	        seconds = seconds < 10 ? "0" + seconds : seconds;
 
 	        display.textContent = minutes + ":" + seconds;
-
-	        if (--timer < 0) {
-	            document.getElementById("return_statment").click()
+	        if (--timer < 0 ){
+	            document.getElementById("EndofEverything").click()
 	        }
 	    }, 1000);
 	}
 var modal = document.getElementById('myModal');
 
 var modal_end = document.getElementById('endModal');
-// When the user clicks the button, open the modal 
+// When the user clicks the button, open the modal
 $('#myBtn').click(function(){
 	modal.style.display = "block";
 });
@@ -89,7 +71,7 @@ $('#btnEnd').click(function(){
 		tab_content[i].style.display = 'block';
 		tabs[i].classList.add('active');
 		line_title[0].innerHTML = tabs[i].innerHTML;
-		underLine[i].style.display = 'block'; 
+		underLine[i].style.display = 'block';
 
 		tab_list.push(i);
 		modal.style.display="none";

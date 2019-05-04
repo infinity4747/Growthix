@@ -7,6 +7,12 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="{% static 'css/result.css' %}">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+	<script>
+		history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+        history.go(1);
+    };
+	</script>
 </head>
 <body>
 	<img id="logo" src="{% static 'img/logo.png' %}">
@@ -18,14 +24,22 @@
 					<div class="reg_block d-flex">
 						<div class="reg_content">
 							<h1 class="reg_title">
+								{% if root == "1" %}
+								Congratulations with the end of the test!
+								{% endif %}
+								{% if root == "2" %}
 								Поздравляем с окончанием теста!
+								{% endif %}</p>
+								
 							</h1>
 							<div class="test_info">
 								<p class="test_par">
-									Ваш результат:
-								</p>
-								<p class="result_numb">
-									{{ result }}/{{ all }}
+									{% if root == "1" %}
+									Thank you for becoming a member of the program Be a Star! In the near future we will contact you and report the results.
+									{% endif %}
+									{% if root == "2" %}
+									Спасибо что стали участником программы Be a Star!В ближайшее время мы свяжемся с вами и сообшим результаты
+									{% endif %}
 								</p>
 							</div>
 						</div>

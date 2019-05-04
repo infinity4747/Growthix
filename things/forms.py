@@ -1,19 +1,19 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Test,User1,User2
-class SignUp1Form(ModelForm):
+from .models import Test,User_table
+
+class SignUpForm(ModelForm):
       class Meta:
-          model = User1
-          fields = ('user','first_name','last_name',)
-class SignUp2Form(ModelForm):
-      class Meta:
-          model = User2
-          fields = ('user','email', 'university', 'speciality','checking','score')
+          model = User_table
+          fields = ('id','country', 'university', 'speciality')
+class IdForm(forms.Form):
+  id=forms.IntegerField()
+    
 
 class TestForm (ModelForm):
     class Meta:
         model = Test
-        fields = ('number','sections','question', 'A', 'B', 'C','answer',)
+        fields = ('number','sections','question', 'A', 'B', 'C','answer','data')
   
     
 	

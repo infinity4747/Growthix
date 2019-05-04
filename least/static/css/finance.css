@@ -175,8 +175,8 @@ input:checked+i:before {
     flex-wrap: wrap;
 }
 img{
-	width: 50%;
-	height: 50%;
+	width: 30%;
+	height: 20%;
 }
 #return_statment{
 	width: 90%;

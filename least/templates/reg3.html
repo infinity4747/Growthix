@@ -21,53 +21,33 @@
 					<div class="reg_block d-flex">
 						<div class="reg_content">
 							<h1 class="reg_title">
-								{% if root == "1" %}
-								Test duration
-								{% endif %}
-								{% if root == "2" %}
-								Время теста
-								{% endif %}	
+								Test duration	
 							</h1>
 							<div class="test_info">
 								<p class="test_par">
-									{% if root == "1" %}
+								
 								During next 120 minutes you should answer 50 questions divided into 5 sections
-								{% endif %}
-								{% if root == "2" %}
-								В течение следующих 100 минут вам нужно будет ответить на 120 вопросов из 5-ти секций:
-								{% endif %}	
-									
+								
 								</p>
 								
 								<p class="test_par">
-								{% if root == "1" %}
+								
 								During the test you are prohibited to use internet or help of other people. Results cannot be changed.<br>
 								Good luck!
-								{% endif %}
-								{% if root == "2" %}
-								Во время теста строго запрещено пользоваться интернетом и помощью посторонних людей. Результаты теста изменить будет нельзя.<br>
-								Желаем вам удачи! 
-								{% endif %}	
+								
 									
 								</p>
 							</div>
 							<div class="lines">
-								<a href="{% url 'reg4' user %}" class="prev">
+								<a href="{% url 'reg2' id %}" class="prev">
 									<img src="{% static img/prev.png' $}" alt="">
-									{% if root == "1" %}
+									
 									Back
-									{% endif %}
-									{% if root == "2" %}
-									Назад 
-									{% endif %}
+									
 								</a>
-								<a href="{% url 'test' user root %}" class="next">
-									{% if root == "1" %}
+								<a href="{% url 'test' id %}" class="next">
+									
 									Start test
-									{% endif %}
-									{% if root == "2" %}
-									Начать тест
-									{% endif %}
 									<img src="{% static 'img/3-Layers.png' %}" alt="">
 								</a>								
 							</div>

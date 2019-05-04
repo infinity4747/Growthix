@@ -10,18 +10,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="{% static 'css/pop.css' %}">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
-	<script>
-	var inputDate = new Date("12/18/2018");
-	var inputDate2 = new Date("12/19/2018");
-	var todaysDate = new Date();
-	if(inputDate2.setHours(0,0,0,0) <todaysDate.setHours(0,0,0,0) ) {
-    	window.location = "{% url 'notAvailable' user %}";
-	}
-	</script>
-
 </head>
 
- {% csrf_token %} 
+ {% csrf_token %}
 <body onload="startTimer()">
 	<section class="Section1">
 		<div class="sections" ><!--- Finance ---->
@@ -29,24 +20,17 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h1 class="test_title">
-							{% if root == "1" %}
+							
 							Part 1
-							{% endif %}
-							{% if root == "2" %}
-							Часть 1
-							{% endif %}
+							
 						</h1>
 						<p class="test_par">
-							{% if root == "1" %}
-							While taking this test you are not allowed to use any additional sources and hints. 
-							Testing time is limited. After finishing this section you cannot go back. Unanswered questions will
-							be accepted as 0. Good luck! 
-							{% endif %}
-							{% if root == "2" %}
-							Во время прохождения теста вам запрещается использовать сторонние источники, списывать и тд. 
-							Время на прохождение теста ограничено. При завершении данной секции, вы не сможете вернуться обратно. Незаполненные вопросы будут защитаны как 0. Желаем удачи! 
-							{% endif %}
 							
+							While taking this test you are not allowed to use any additional sources and hints.
+							Testing time is limited. After finishing this section you cannot go back. Unanswered questions will
+							be accepted as 0. Good luck!
+							
+
 						</p>
 					</div>
 				</div>
@@ -63,7 +47,7 @@
 								</p>
 								</p>{% if form.img.url is not null %}
 				                    <img src="{{ form.img.url }}" alt="profile">
-				                      {% endif %} 
+				                      {% endif %}
 				                      <br>
 								<p class="question_title">
 									{{ form.second_part }}
@@ -98,7 +82,29 @@
 												</div>
 											</label>
 										</div>
-								</div>					
+										{% if form.D != "" %}
+										<div class="radio">
+											<label class="d-flex">
+												<input type="radio" class='button_radio' name="{{form.number}}" value='D'>
+												<i></i>
+												<div class="radio_text">
+													{{ form.D}}
+												</div>
+											</label>
+										</div>
+										{% endif %}
+										{% if form.E != "" %}
+										<div class="radio">
+											<label class="d-flex">
+												<input type="radio" class='button_radio' name="{{form.number}}" value='E'>
+												<i></i>
+												<div class="radio_text">
+													{{ form.E}}
+												</div>
+											</label>
+										</div>
+										{% endif %}
+								</div>
 							</div>
 						</div>
 					</div>
@@ -111,24 +117,16 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h1 class="test_title">
-							{% if root == "1" %}
+							
 							Part 2
-							{% endif %}
-							{% if root == "2" %}
-							Часть 2
-							{% endif %}
+							
 						</h1>
 						<p class="test_par">
-							{% if root == "1" %}
-							While taking this test you are not allowed to use any additional sources and hints. 
-							Testing time is limited. After finishing this section you cannot go back. Unanswered questions will
-							be accepted as 0. Good luck! 
-							{% endif %}
-							{% if root == "2" %}
-							Во время прохождения теста вам запрещается использовать сторонние источники, списывать и тд. 
-							Время на прохождение теста ограничено. При завершении данной секции, вы не сможете вернуться обратно. Незаполненные вопросы будут защитаны как 0. Желаем удачи! 
-							{% endif %}
 							
+							While taking this test you are not allowed to use any additional sources and hints.
+							Testing time is limited. After finishing this section you cannot go back. Unanswered questions will
+							be accepted as 0. Good luck!
+
 						</p>
 					</div>
 				</div>
@@ -145,7 +143,7 @@
 								</p>
 								{% if form.img.url is not null %}
 				                    <img src="{{ form.img.url }}" alt="profile">
-				                      {% endif %} 
+				                      {% endif %}
 				                      <br>
 								<p class="question_title">
 									{{ form.second_part }}
@@ -180,13 +178,35 @@
 												</div>
 											</label>
 										</div>
-								</div>				
+										{% if form.D != "" %}
+										<div class="radio">
+											<label class="d-flex">
+												<input type="radio" class='button_radio' name="{{form.number}}" value='D'>
+												<i></i>
+												<div class="radio_text">
+													{{ form.D}}
+												</div>
+											</label>
+										</div>
+										{% endif %}
+										{% if form.E != "" %}
+										<div class="radio">
+											<label class="d-flex">
+												<input type="radio" class='button_radio' name="{{form.number}}" value='E'>
+												<i></i>
+												<div class="radio_text">
+													{{ form.E}}
+												</div>
+											</label>
+										</div>
+										{% endif %}
+								</div>
 							</div>
-							
+
 						</div>
 					</div>
 				</div>
-				{% endfor%}	
+				{% endfor%}
 			</div>
 		</div>
 		<div class="sections"><!--- Analys ---->
@@ -194,24 +214,16 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h1 class="test_title">
-							{% if root == "1" %}
+							
 							Part 3
-							{% endif %}
-							{% if root == "2" %}
-							Часть 3
-							{% endif %}
+			
 						</h1>
 						<p class="test_par">
-							{% if root == "1" %}
-							While taking this test you are not allowed to use any additional sources and hints. 
+						
+							While taking this test you are not allowed to use any additional sources and hints.
 							Testing time is limited. After finishing this section you cannot go back. Unanswered questions will
-							be accepted as 0. Good luck! 
-							{% endif %}
-							{% if root == "2" %}
-							Во время прохождения теста вам запрещается использовать сторонние источники, списывать и тд. 
-							Время на прохождение теста ограничено. При завершении данной секции, вы не сможете вернуться обратно. Незаполненные вопросы будут защитаны как 0. Желаем удачи! 
-							{% endif %}
-							
+							be accepted as 0. Good luck!
+
 						</p>
 					</div>
 				</div>
@@ -228,7 +240,7 @@
 								</p>
 								{% if form.img.url is not null %}
 				                    <img src="{{ form.img.url }}" alt="profile">
-				                      {% endif %} 
+				                      {% endif %}
 								<p class="question_title">
 									{{ form.second_part }}
 								</p>
@@ -262,37 +274,51 @@
 												</div>
 											</label>
 										</div>
-								</div>					
+										{% if form.D != "" %}
+										<div class="radio">
+											<label class="d-flex">
+												<input type="radio" class='button_radio' name="{{form.number}}" value='D'>
+												<i></i>
+												<div class="radio_text">
+													{{ form.D}}
+												</div>
+											</label>
+										</div>
+										{% endif %}
+										{% if form.E != "" %}
+										<div class="radio">
+											<label class="d-flex">
+												<input type="radio" class='button_radio' name="{{form.number}}" value='E'>
+												<i></i>
+												<div class="radio_text">
+													{{ form.E}}
+												</div>
+											</label>
+										</div>
+										{% endif %}
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				{% endfor %}
 			</div>
-		</div>	
+		</div>
 		<div class="sections"><!--- Cal ---->
 			<div class="container cn">
 				<div class="row">
 					<div class="col-md-12">
 						<h1 class="test_title">
-							{% if root == "1" %}
+							
 							Part 4
-							{% endif %}
-							{% if root == "2" %}
-							Часть 4
-							{% endif %}
+							
 						</h1>
 						<p class="test_par">
-							{% if root == "1" %}
-							While taking this test you are not allowed to use any additional sources and hints. 
-							Testing time is limited. After finishing this section you cannot go back. Unanswered questions will
-							be accepted as 0. Good luck! 
-							{% endif %}
-							{% if root == "2" %}
-							Во время прохождения теста вам запрещается использовать сторонние источники, списывать и тд. 
-							Время на прохождение теста ограничено. При завершении данной секции, вы не сможете вернуться обратно. Незаполненные вопросы будут защитаны как 0. Желаем удачи! 
-							{% endif %}
 							
+							While taking this test you are not allowed to use any additional sources and hints.
+							Testing time is limited. After finishing this section you cannot go back. Unanswered questions will
+							be accepted as 0. Good luck!
+
 						</p>
 					</div>
 				</div>
@@ -309,7 +335,7 @@
 								</p>
 								{% if form.img.url is not null %}
 				                    <img src="{{ form.img.url }}" alt="profile">
-				                      {% endif %} 
+				                      {% endif %}
 								<p class="question_title">
 									{{ form.second_part }}
 								</p>
@@ -343,7 +369,29 @@
 												</div>
 											</label>
 										</div>
-								</div>					
+										{% if form.D != "" %}
+										<div class="radio">
+											<label class="d-flex">
+												<input type="radio" class='button_radio' name="{{form.number}}" value='D'>
+												<i></i>
+												<div class="radio_text">
+													{{ form.D}}
+												</div>
+											</label>
+										</div>
+										{% endif %}
+										{% if form.E != "" %}
+										<div class="radio">
+											<label class="d-flex">
+												<input type="radio" class='button_radio' name="{{form.number}}" value='E'>
+												<i></i>
+												<div class="radio_text">
+													{{ form.E}}
+												</div>
+											</label>
+										</div>
+										{% endif %}
+								</div>
 							</div>
 						</div>
 					</div>
@@ -356,24 +404,15 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h1 class="test_title">
-							{% if root == "1" %}
+							
 							Part 5
-							{% endif %}
-							{% if root == "2" %}
-							Часть 5
-							{% endif %}
 						</h1>
 						<p class="test_par">
-							{% if root == "1" %}
-							While taking this test you are not allowed to use any additional sources and hints. 
-							Testing time is limited. After finishing this section you cannot go back. Unanswered questions will
-							be accepted as 0. Good luck! 
-							{% endif %}
-							{% if root == "2" %}
-							Во время прохождения теста вам запрещается использовать сторонние источники, списывать и тд. 
-							Время на прохождение теста ограничено. При завершении данной секции, вы не сможете вернуться обратно. Незаполненные вопросы будут защитаны как 0. Желаем удачи! 
-							{% endif %}
 							
+							While taking this test you are not allowed to use any additional sources and hints.
+							Testing time is limited. After finishing this section you cannot go back. Unanswered questions will
+							be accepted as 0. Good luck!
+
 						</p>
 					</div>
 				</div>
@@ -390,7 +429,7 @@
 								</p>
 								{% if form.img.url is not null %}
 				                    <img src="{{ form.img.url }}" alt="profile">
-				                      {% endif %} 
+				                      {% endif %}
 								<p class="question_title">
 									{{ form.second_part }}
 								</p>
@@ -424,48 +463,86 @@
 												</div>
 											</label>
 										</div>
-								</div>					
+										{% if form.D != "" %}
+										<div class="radio">
+											<label class="d-flex">
+												<input type="radio" class='button_radio' name="{{form.number}}" value='D'>
+												<i></i>
+												<div class="radio_text">
+													{{ form.D}}
+												</div>
+											</label>
+										</div>
+										{% endif %}
+										{% if form.E != "" %}
+										<div class="radio">
+											<label class="d-flex">
+												<input type="radio" class='button_radio' name="{{form.number}}" value='E'>
+												<i></i>
+												<div class="radio_text">
+													{{ form.E}}
+												</div>
+											</label>
+										</div>
+										{% endif %}
+								</div>
 							</div>
 						</div>
-						
+
 					</div>
 				</div>
 				{% endfor %}
-			</div>	
-		</div> 
+			</div>
+		</div>
 	</section>
 	<section class="Section2">
 		<div class="container">
 			<div class="row" id="tab-wrapper">
 				<div class="col-md-2 d-flex">
 					<img src="{% static 'img/chronometer.svg' %}" class="time_svg">
-					<p class="time_text"><span id="time">100:00</span> </p>
+					<p class="time_text"><span id="time">120:00</span> </p>
 				</div>
 				</h1>
 				<div class="col-md-8 d-flex">
 				<div class="category_block">
-					<p class="category tab active">Финансы</p>
+					<p class="category tab active">
+								
+								Part 1
+								</p>
 					<div class="under_line"></div>
 				</div>
 				<div class="category_block">
-					<p class="category tab" >Маркетинг</p>
+					<p class="category tab" >
+								
+								Part 2
+								</p></p>
 					<div class="under_line"></div>
 				</div>
 				<div class="category_block">
-					<p class="category tab">Анализ</p>
+					<p class="category tab">
+							
+								Part 3
+								</p></p>
 					<div class="under_line"></div>
 				</div>
 				<div class="category_block">
-					<p class="category tab">Расчеты</p>
+					<p class="category tab">
+								
+								Part 4
+								</p></p>
 					<div class="under_line"></div>
 				</div>
 				<div class="category_block">
-					<p class="category tab">Теория</p>
+					<p class="category tab">
+								
+								Part 5
+								</p></p>
 					<div class="under_line"></div>
 				</div>
 				</div>
 				<div class="col-md-2">
-					<a class="btn btn-header" href="#" data-target="#loginModal" data-toggle="modal" id="myBtn">Далее
+					<a class="btn btn-header" href="#" data-target="#loginModal" data-toggle="modal" id="myBtn">
+								Next
 					</a>
 					<!-- The Modal -->
             		<div id="myModal" class="modal">
@@ -473,23 +550,36 @@
               		<!-- Modal content -->
 	              		<div class="modal-content">
 			                <p class="reg_par">
-								Вы уверены, что хотите завершить эту часть теста?
+			                	
+								Are you sure want to end this section?<br>
+								After clicking confirm button you can not go back
+								
+
 							</p>
 							<div class="row">
 								<div class="col">
-								<a class="btn btn-header" id="myBtnCancer">Отмена
+								<a class="btn btn-header" id="myBtnCancer">
+								
+								Close
+								
 								</a>
 								</div>
 								<div class="col"></div>
 								<div class="col">
-									<a class="btn btn-header"  id="btnEnd">Завершить
+								<a class="btn btn-header"  id="btnEnd">
+								
+								Confirm
+								
 								</a>
 								</div>
 							</div>
 		              	</div>
-              
+
             		</div>
-            		<a class="btn btn-header" href="#" data-target="#loginModal" data-toggle="modal" id="endbtn">Завершить
+            		<a class="btn btn-header" href="#" data-target="#loginModal" data-toggle="modal" id="endbtn">
+            			
+								End
+								
 					</a>
 					<!-- The Modal -->
             		<div id="endModal" class="modal">
@@ -497,21 +587,30 @@
               		<!-- Modal content -->
 	              		<div class="modal-content">
 			                <p class="reg_par">
-								Вы уверены, что хотите завершить теста?
+								
+								Are you sure want to end test?<br>
+								After clicking confirm button you can not go back
+								
 							</p>
 							<div class="row">
 								<div class="col">
-								<a class="btn btn-header" id="BtnCancer">Отмена
+								<a class="btn btn-header" id="BtnCancer">
+								
+								Close
+								
 								</a>
 								</div>
 								<div class="col"></div>
 								<div class="col">
-									<a class="btn btn-header"  id="EndofEverything">Завершить
+								<a class="btn btn-header"  id="EndofEverything">
+								
+								Confirm
+								
 								</a>
 								</div>
 							</div>
 		              	</div>
-              
+
             		</div>
 
 				</div>
@@ -523,18 +622,16 @@
 	<script>
 		$('#EndofEverything').click(function(){
 		list=[];
-	    alert('clicked')
 	    var rates = document.getElementsByClassName('button_radio');
 	 	$("input:radio").each(function(){
 	        var name = $(this).attr("name");
 	    	if($("input:radio[name="+name+"]:checked")){
 		       	var radioValue = $("input[name="+name+"]:checked").val();
-	           	list.push(name)
 	         	if (radioValue != null) {
-	         		list.push(radioValue);
+	         		list.push(name,radioValue);
 	         	}
 	         	else{
-	         		list.push('0');
+	         		list.push(name,'-');
 	         	}
 	        }
 	    });
@@ -542,7 +639,7 @@
 	 	var product = document.createElement('input');
 	 	product.value = list;
 	 	product.name = "res";
-	 	myform.action = "{% url  'res'  user  root %}";
+	 	myform.action = "{% url  'res'  id %}";
 	 	myform.method = "get";
 	 	myform.appendChild(product);
 	 	document.body.appendChild(myform);
