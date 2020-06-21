@@ -11,7 +11,7 @@ class Country(models.Model):
 
 class User_table(models.Model):
     id=models.IntegerField(blank=True,primary_key=True)
-    country= models.ForeignKey(Country,blank=True,on_delete="CASCADE")
+    country= models.ForeignKey(Country,blank=True, on_delete=models.CASCADE)
     university=models.CharField(max_length=256,blank=True)
     speciality=models.CharField(max_length=524,blank=True)
     checking=models.BooleanField(default=False)

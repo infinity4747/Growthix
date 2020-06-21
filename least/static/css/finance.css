@@ -29,9 +29,9 @@ button::-moz-focus-inner {
 }
 
 .test_title {
-	color: #4505b3;
-	font-size: 24px;
-	font-weight: bold;
+    color: #4505b3;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .test_par {
@@ -50,10 +50,10 @@ button::-moz-focus-inner {
 }
 
 .numb {
-	color: #4505b3;
-	font-size: 18px;
-	margin-right: 20px;
-	margin-top: 3px;
+    color: #4505b3;
+    font-size: 18px;
+    margin-right: 20px;
+    margin-top: 3px;
 }
 
 .question_title {
@@ -106,9 +106,9 @@ label input {
 }
 
 .category {
-	color: #9b9b9b;
-	font-size: 16px;
-	text-align: center;
+    color: #4505b3;
+    font-size: 16px;
+    text-align: center;
 }
 
 .category:hover{
